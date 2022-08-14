@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+  <title>Frontend Mentor | Profile card component</title>
+  <style>
+  :root{
+    --dark-cyan: hsl(185, 75%, 39%); /*background*/
+    --very-dark-desaturated-blue: hsl(229, 23%, 23%); /*Numbers, name - font*/
+    --dark-grayish-blue: hsl(227, 10%, 46%); /*details - font*/
+  }
+  /*remove default style*/
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    font-family: 'Kumbh Sans', sans-serif;
+  }
+  .account-details h1{
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--very-dark-desaturated-blue);
+  }
+  .account-details h1 span, .account-details p{
+    color: var(--dark-grayish-blue);
+    font-weight: 400;
+  }
+  .account-details p{
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  .account-details{
+    border-bottom: 1px solid #e6eded;
+  }
+  .main-container{
+    height: 100vh;
+    position: relative;
+    background: hsl(185, 75%, 39%);
+    z-index: -2;
+  }
+  #bg-bottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-image: url(images/bg-pattern-bottom.svg);
+    background-position: top left;
+    z-index: -1;
+  }
+  #bg-top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-image: url(images/bg-pattern-top.svg);
+    background-position: bottom right;
+  }
+  .card-wrapper{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .background-card{
+    background-image: url(images/bg-pattern-card.svg);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+  }
+  .account-details{
+    background: white;
+  }
+  .statisc{
+    background: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .background-card div{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .background-card img{
+    border-radius: 54px;
+    border: 5px solid white;
+  }
+  .account-details{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  .statisc{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .statisc div p:first-child{
+    color: var(--very-dark-desaturated-blue);
+    font-weight: 700;
+    text-align: center;
+    padding-bottom: 5px;
+  }
+  .statisc div p:nth-child(2){
+    color: var(--dark-grayish-blue);
+    font-size: 10px;
+    letter-spacing: 0.05rem;
+    text-align: center;
+  }
+  @media screen and (max-width: 415px){
+    #bg-top{
+      width: 70vw;
+      height: 48vh;
+    }
+    #bg-bottom{
+      width: 70vw;
+      height: 48vh;
+    }
+    .background-card{
+      min-height: 20vh;
+    }
+    .card{
+      width: 80vw;
+    }
+    .account-details{
+      min-height: 20vh;
+    }
+    .statisc{
+      min-height: 12vh;
+    }
+    .background-card div{
+      top: 10vh;
+      min-height: 20vh;
+    }
+  }
+  @media screen and (min-width: 900px){
+    #bg-top{
+      width: 45vw;
+      height: 55vh;
+    }
+    #bg-bottom{
+      width: 45vw;
+      height: 55vh;
+    }
+    .background-card{
+      min-height: 150px;
+    }
+    .card{
+      min-width: 350px;
+    }
+    .account-details{
+      min-height: 150px;
+      background: white;
+    }
+    .statisc{
+      min-height: 75px;
+    }
+    .background-card div{
+      top: 75px;
+      min-height: 150px;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div id="bg-top">
+    </div>
+    <div class="card-wrapper">
+      <div class="card">
+
+        <div class="background-card">
+          <div>
+            <img src="images/image-victor.jpg" alt="Victor profile photo">
+          </div>
+        </div>
+
+        <div class="wrapper-acc-details">
+          <div class="account-details">
+            <h1>Victor Crest <span>26</span></h1>
+            <p>London</p>
+          </div>
+        </div>
+
+        <div class="statisc">
+          <div>
+            <p>80K</p>
+            <p>Followers</p>
+          </div>
+          <div>
+            <p>803K</p>
+            <p>Likes</p>
+          </div>
+          <div>
+            <p>1.4K</p>
+            <p>Photos</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div id="bg-bottom">
+    </div>
+  </div>
+</body>
+</html>
